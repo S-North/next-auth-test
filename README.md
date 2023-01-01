@@ -4,6 +4,31 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Test to see if I can get Google login, & email login working for a test site to replace Auth0.
 
+## learning resources
+
+NextAuth docs: [https://next-auth.js.org]
+Code Commerce Video: [https://www.youtube.com/watch?v=A5ZN--P9vXM]
+
+## .env file
+
+Create a .env.local file to store the environment variables into.
+In Nextjs you can also use .env.development & .env.production [https://nextjs.org/docs/basic-features/environment-variables]
+
+For Google OAUTH, https://console.cloud.google.com/apis/credentials
+Create a new credential:
+ - OATH client ID
+ - Web Application
+ - Authorised JavaScript origins: http://localhost:3000
+ - Authorised redirect URIs: http://localhost:3000/api/auth/callback/google
+Plug the returned Client ID && Client Secret into the fields below
+
+>GOOGLE_CLIENT_ID={see above}
+>GOOGLE_CLIENT_SECRET={see above}
+>
+>NEXTAUTH_URL=http://localhost:3000
+>
+>JWT_SECRET={generate this with openssl rand -base64 32}
+
 ## Getting Started
 
 First, run the development server:
